@@ -6,6 +6,7 @@
     
   <!-- Bootstrap -->
   <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link rel="stylesheet" href="https://raw.githubusercontent.com/8BitRain/Treehouse/master/polyfill.object-fit.css">
 
   <style type="text/css">
     body{
@@ -62,21 +63,27 @@
     }
 
     .credits{
-      position: fixed;
       display: block;
       margin-left: auto;
       margin-right: auto;
       width: 100%;
-      height: auto;
+      height: 100%;
+      
+      object-fit: cover;
+
+
+
     }
 
     .reviews{
       padding-bottom: 9%;
     }
 
-    img{
-    display: inline-block;
-    }
+   img{
+    max-width: 100%;
+    height: auto;
+    width: auto;
+   }
 
     .imgTitle{
       z-index: 1;
@@ -114,6 +121,13 @@
      <img class ="credits" src="https://raw.githubusercontent.com/8BitRain/Treehouse/master/Mockup%20Credits.png">
     </div>
 
+  <script src="https://raw.githubusercontent.com/8BitRain/Treehouse/master/polyfill.object-fit.min.js"></script>
+    <script>
+     objectFit.polyfill({
+          selector: 'img', // this can be any CSS selector
+          fittype: 'cover' // either contain, cover, fill or none
+      });
+    </script>
   <script src="http://code.jquery.com/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script>
   </body>
