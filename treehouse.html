@@ -6,11 +6,27 @@
     
   <!-- Bootstrap -->
   <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+
   <style type="text/css">
     body{
       background-image: url(https://raw.githubusercontent.com/8BitRain/Treehouse/master/Mockup%20BG.png);
       background-repeat: no-repeat;
       background-size: cover;
+    }
+
+    /* Parallax*/
+    #content_layer{
+      position: absolute;
+    }
+
+    #parallax_layer_one{
+      position: fixed;
+      background: url(https://raw.githubusercontent.com/8BitRain/Treehouse/master/Mockup%20BG.png);
+       background-repeat: no-repeat;
+        background-size: cover;
+      width: 100%;
+      height: 2000px;
+
     }
 
     .video{
@@ -26,64 +42,29 @@
     img{
     display: inline-block;
     }
-    <style>
 
-  /* Parallax base styles
-  --------------------------------------------- */
-
-  .parallax {
-    height: 100vh;
-    overflow-x: hidden;
-    overflow-y: auto;
-    -webkit-perspective: 1px;
-    perspective: 1px;
-  }
-
-  .parallax__layer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
-
-  .parallax__layer--base {
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-  }
-
-  .parallax__layer--back {
-    -webkit-transform: translateZ(-1px);
-    transform: translateZ(-1px);
-  }
-
-</style>
   </style>
+
+  <script>
+  function parallax(){
+    var prlx_lyr_1 = document.getElementById('parallax_layer_one');
+    prlx_lyr_1.style.top = (.5) * -(window.pageYOffset) +'px';
+  }
+  window.addEventListener("scroll", parallax, false);
+  </script>
 </head>
 
   <body>
-  <!--  <div class="backgroundTrip">
-    <img class="reviews" src="https://raw.githubusercontent.com/8BitRain/Treehouse/master/reviews2.png">
-    <img class="video" src="https://raw.githubusercontent.com/8BitRain/Treehouse/master/VideoPlaceHolder.png">
-    <img src="https://raw.githubusercontent.com/8BitRain/Treehouse/master/Laurels.png">
-    <script src="http://code.jquery.com/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-  </div> -->
+    <div id="parallax_layer_one"></div>
 
-  <div class="parallax__layer--back">
-    <div >
+    <div id="content_layer">
+      <img class="reviews" src="https://raw.githubusercontent.com/8BitRain/Treehouse/master/reviews2.png">
+      <img class="video" src="https://raw.githubusercontent.com/8BitRain/Treehouse/master/VideoPlaceHolder.png">
+      <img src="https://raw.githubusercontent.com/8BitRain/Treehouse/master/Laurels.png">
     </div>
-  </div>
 
-  <div class="parallax__layer--base">
-    <img class="reviews" src="https://raw.githubusercontent.com/8BitRain/Treehouse/master/reviews2.png">
-    <img class="video" src="https://raw.githubusercontent.com/8BitRain/Treehouse/master/VideoPlaceHolder.png">
-    <img src="https://raw.githubusercontent.com/8BitRain/Treehouse/master/Laurels.png">
-  </div>
   <script src="http://code.jquery.com/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script>
   </body>
 
-
-  <h1>
 </html>
